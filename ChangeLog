@@ -1,3 +1,10 @@
+2019-10-11 Alexander Kamkin <kamkin@ispras.ru>
+
+	Added a couple of test programs.
+
+	* testsuite/algorithms/euclid: Added.
+	* testsuite/synthetics/rv32v: Added.
+
 2019-10-09 Alexander Kamkin <kamkin@ispras.ru>
 
 	Initial commit to populate the repository.
