@@ -1,3 +1,9 @@
+2019-10-14 Alexander Kamkin <kamkin@ispras.ru>
+
+	Updated README for rv32v.
+
+	* testsuite/synthetics/rv32v/README.md: Updated.
+
 2019-10-11 Alexander Kamkin <kamkin@ispras.ru>
 
 	Added a couple of test programs.
