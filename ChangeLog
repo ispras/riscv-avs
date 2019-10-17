@@ -1,5 +1,13 @@
 2019-10-17 Alexander Kamkin <kamkin@ispras.ru>
 
+	Added some integer and sorting algorithms.
+
+	* testsuite/algorithms/integer/int_{divide,minmax,sqrt): Added.
+	* testsuite/algorithms/eclid/* -> integer/int_* : Renamed.
+	* testsuite/algorithms/sorting/bubblesort_{byte,hword,word}: Added.
+
+2019-10-17 Alexander Kamkin <kamkin@ispras.ru>
+
 	Fixed README add at the previous commit.
 
 	* testsuite/compliance/rv32v/README: Fixed.
