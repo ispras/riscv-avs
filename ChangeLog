@@ -1,6 +1,12 @@
+2019-10-17 Alexander Kamkin <kamkin@ispras.ru>
+
+	Fixed README add at the previous commit.
+
+	* testsuite/compliance/rv32v/README: Fixed.
+
 2019-10-16 Alexander Protsenko <protsenko@ispras.ru>
 
-	Added a couple of test programs to compliance/rv32v.
+	Added test programs to compliance/rv32v.
 
 	* testsuite/compliance/rv32v: Added.
 
