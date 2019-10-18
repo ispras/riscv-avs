@@ -19,7 +19,7 @@ You may contribute to this repository by submitting pull requests and by comment
 
 ## Licensing
 
-The licensing policy is derived from [RISC-V Compliance Task Group](https://github.com/riscv-compliance):
+The licensing policy is derived from [RISC-V Compliance Task Group](https://github.com/riscv/riscv-compliance):
 
 - code is licensed under the BSD 3-clause license (SPDX license identifier `BSD-3-Clause`); while
 - documentation is licensed under the Creative Commons Attribution 4.0 International license (SPDX license identifier `CC-BY-4.0`).
