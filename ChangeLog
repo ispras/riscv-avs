@@ -1,3 +1,10 @@
+2019-10-18 Alexander Kamkin <kamkin@ispras.ru>
+
+	Added compliance tests ported from https://github.com/riscv/riscv-tests.
+
+	* testsuite/compliance/*: Added.
+	* testsuite/compliance/README.md: Updated.
+
 2019-10-17 Alexander Kamkin <kamkin@ispras.ru>
 
 	Added some integer and sorting algorithms.
@@ -10,7 +17,7 @@
 
 	Fixed README add at the previous commit.
 
-	* testsuite/compliance/rv32v/README: Fixed.
+	* testsuite/compliance/rv32v/README.md: Fixed.
 
 2019-10-16 Alexander Protsenko <protsenko@ispras.ru>
 

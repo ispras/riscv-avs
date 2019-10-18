@@ -1,0 +1,568 @@
+0 clk 0 IT (0) 0000000080000000 04c0006f A svc_ns : j reset_vector
+0 clk R zero 80000004
+1 clk 0 IT (1) 000000008000004c f1402573 A svc_ns : csrr a0, mhartid
+1 clk R a0 0
+2 clk 0 IT (2) 0000000080000050 00051063 A svc_ns : bnez a0, 1b
+3 clk 0 IT (3) 0000000080000054 0000029701028293 A svc_ns : la t0, 1f
+3 clk R t0 80000054
+3 clk R t0 80000064
+4 clk 0 IT (4) 000000008000005c 30529073 A svc_ns : csrw mtvec, t0
+4 clk R mtvec 80000064
+5 clk 0 IT (5) 0000000080000060 18005073 A svc_ns : csrwi satp, 0x0
+5 clk R satp 0
+6 clk 0 IT (6) 0000000080000064 0000029701c28293 A svc_ns : la t0, 1f
+6 clk R t0 80000064
+6 clk R t0 80000080
+7 clk 0 IT (7) 000000008000006c 30529073 A svc_ns : csrw mtvec, t0
+7 clk R mtvec 80000080
+8 clk 0 IT (8) 0000000080000070 fff00293 A svc_ns : li t0, 0xffffffffffffffff
+8 clk R t0 ffffffffffffffff
+9 clk 0 IT (9) 0000000080000074 3b029073 A svc_ns : csrw pmpaddr0, t0
+9 clk R pmpaddr0 ffffffffffffffff
+10 clk 0 IT (10) 0000000080000078 01f00293 A svc_ns : li t0, 0x1f
+10 clk R t0 1f
+11 clk 0 IT (11) 000000008000007c 3a029073 A svc_ns : csrw pmpcfg0, t0
+11 clk R pmpcfg0 1f
+12 clk 0 IT (12) 0000000080000080 0000029701828293 A svc_ns : la t0, 1f
+12 clk R t0 80000080
+12 clk R t0 80000098
+13 clk 0 IT (13) 0000000080000088 30529073 A svc_ns : csrw mtvec, t0
+13 clk R mtvec 80000098
+14 clk 0 IT (14) 000000008000008c 30205073 A svc_ns : csrwi medeleg, 0x0
+14 clk R medeleg 0
+15 clk 0 IT (15) 0000000080000090 30305073 A svc_ns : csrwi mideleg, 0x0
+15 clk R mideleg 0
+16 clk 0 IT (16) 0000000080000094 30405073 A svc_ns : csrwi mie, 0x0
+16 clk R mie 0
+17 clk 0 IT (17) 0000000080000098 00000193 A svc_ns : li gp, 0x0
+17 clk R gp 0
+18 clk 0 IT (18) 000000008000009c 00000297f6828293 A svc_ns : la t0, trap_vector
+18 clk R t0 8000009c
+18 clk R t0 80000004
+19 clk 0 IT (19) 00000000800000a4 30529073 A svc_ns : csrw mtvec, t0
+19 clk R mtvec 80000004
+20 clk 0 IT (20) 00000000800000a8 00100513 A svc_ns : li a0, 0x1
+20 clk R a0 1
+21 clk 0 IT (21) 00000000800000ac 01f51513 A svc_ns : slli a0, a0, 0x1f
+21 clk R a0 80000000
+22 clk 0 IT (22) 00000000800000b0 00055863 A svc_ns : bgez a0, 1f
+23 clk 0 IT (23) 00000000800000c0 80000297f4028293 A svc_ns : la t0, stvec_handler
+23 clk R t0 c0
+23 clk R t0 0
+24 clk 0 IT (24) 00000000800000c8 00028e63 A svc_ns : beqz t0, 1f
+25 clk 0 IT (25) 00000000800000e4 30005073 A svc_ns : csrwi mstatus, 0x0
+25 clk R mstatus 0
+26 clk 0 IT (26) 00000000800000e8 0000029701428293 A svc_ns : la t0, 1f
+26 clk R t0 800000e8
+26 clk R t0 800000fc
+27 clk 0 IT (27) 00000000800000f0 34129073 A svc_ns : csrw mepc, t0
+27 clk R mepc 800000fc
+28 clk 0 IT (28) 00000000800000f4 f1402573 A svc_ns : csrr a0, mhartid
+28 clk R a0 0
+29 clk 0 IT (29) 00000000800000f8 30200073 A svc_ns : mret
+30 clk 0 IT (30) 00000000800000fc 800000b700008093 A svc_ns : li ra, 0xffffffff80000000
+30 clk R ra ffffffff80000000
+30 clk R ra ffffffff80000000
+31 clk 0 IT (31) 0000000080000104 0000df13 A svc_ns : srli t5, ra, 0x0
+31 clk R t5 ffffffff80000000
+32 clk 0 IT (32) 0000000080000108 80000eb7000e8e93 A svc_ns : li t4, 0xffffffff80000000
+32 clk R t4 ffffffff80000000
+32 clk R t4 ffffffff80000000
+33 clk 0 IT (33) 0000000080000110 00200193 A svc_ns : li gp, 0x2
+33 clk R gp 2
+34 clk 0 IT (34) 0000000080000114 45df1063 A svc_ns : bne t5, t4, fail
+35 clk 0 IT (35) 0000000080000118 800000b700008093 A svc_ns : li ra, 0xffffffff80000000
+35 clk R ra ffffffff80000000
+35 clk R ra ffffffff80000000
+36 clk 0 IT (36) 0000000080000120 0010df13 A svc_ns : srli t5, ra, 0x1
+36 clk R t5 7fffffffc0000000
+37 clk 0 IT (37) 0000000080000124 80000eb7fffe8e9300be9e93600eee9300be9e93000eee9300ae9e93000eee93 A svc_ns : li t4, 0x7fffffffc0000000
+37 clk R t4 ffffffff80000000
+37 clk R t4 ffffffff7fffffff
+37 clk R t4 fffffbfffffff800
+37 clk R t4 fffffbfffffffe00
+37 clk R t4 ffdffffffff00000
+37 clk R t4 ffdffffffff00000
+37 clk R t4 7fffffffc0000000
+37 clk R t4 7fffffffc0000000
+38 clk 0 IT (38) 0000000080000144 00300193 A svc_ns : li gp, 0x3
+38 clk R gp 3
+39 clk 0 IT (39) 0000000080000148 41df1663 A svc_ns : bne t5, t4, fail
+40 clk 0 IT (40) 000000008000014c 800000b700008093 A svc_ns : li ra, 0xffffffff80000000
+40 clk R ra ffffffff80000000
+40 clk R ra ffffffff80000000
+41 clk 0 IT (41) 0000000080000154 0070df13 A svc_ns : srli t5, ra, 0x7
+41 clk R t5 1ffffffff000000
+42 clk 0 IT (42) 0000000080000158 02000eb7fffe8e9300be9e937f8eee9300be9e93000eee9300ae9e93000eee93 A svc_ns : li t4, 0x1ffffffff000000
+42 clk R t4 2000000
+42 clk R t4 1ffffff
+42 clk R t4 ffffff800
+42 clk R t4 ffffffff8
+42 clk R t4 7fffffffc000
+42 clk R t4 7fffffffc000
+42 clk R t4 1ffffffff000000
+42 clk R t4 1ffffffff000000
+43 clk 0 IT (43) 0000000080000178 00400193 A svc_ns : li gp, 0x4
+43 clk R gp 4
+44 clk 0 IT (44) 000000008000017c 3ddf1c63 A svc_ns : bne t5, t4, fail
+45 clk 0 IT (45) 0000000080000180 800000b700008093 A svc_ns : li ra, 0xffffffff80000000
+45 clk R ra ffffffff80000000
+45 clk R ra ffffffff80000000
+46 clk 0 IT (46) 0000000080000188 00e0df13 A svc_ns : srli t5, ra, 0xe
+46 clk R t5 3fffffffe0000
+47 clk 0 IT (47) 000000008000018c 00040eb7fffe8e9300be9e937ffeee9300be9e93780eee9300ae9e93000eee93 A svc_ns : li t4, 0x3fffffffe0000
+47 clk R t4 40000
+47 clk R t4 3ffff
+47 clk R t4 1ffff800
+47 clk R t4 1fffffff
+47 clk R t4 fffffff800
+47 clk R t4 ffffffff80
+47 clk R t4 3fffffffe0000
+47 clk R t4 3fffffffe0000
+48 clk 0 IT (48) 00000000800001ac 00500193 A svc_ns : li gp, 0x5
+48 clk R gp 5
+49 clk 0 IT (49) 00000000800001b0 3bdf1263 A svc_ns : bne t5, t4, fail
+50 clk 0 IT (50) 00000000800001b4 800000b700108093 A svc_ns : li ra, 0xffffffff80000001
+50 clk R ra ffffffff80000000
+50 clk R ra ffffffff80000001
+51 clk 0 IT (51) 00000000800001bc 01f0df13 A svc_ns : srli t5, ra, 0x1f
+51 clk R t5 1ffffffff
+52 clk 0 IT (52) 00000000800001c0 00000eb7001e8e9300be9e937ffeee9300be9e937ffeee9300ae9e933ffeee93 A svc_ns : li t4, 0x1ffffffff
+52 clk R t4 0
+52 clk R t4 1
+52 clk R t4 800
+52 clk R t4 fff
+52 clk R t4 7ff800
+52 clk R t4 7fffff
+52 clk R t4 1fffffc00
+52 clk R t4 1ffffffff
+53 clk 0 IT (53) 00000000800001e0 00600193 A svc_ns : li gp, 0x6
+53 clk R gp 6
+54 clk 0 IT (54) 00000000800001e4 37df1863 A svc_ns : bne t5, t4, fail
+55 clk 0 IT (55) 00000000800001e8 fff00093 A svc_ns : li ra, 0xffffffffffffffff
+55 clk R ra ffffffffffffffff
+56 clk 0 IT (56) 00000000800001ec 0000df13 A svc_ns : srli t5, ra, 0x0
+56 clk R t5 ffffffffffffffff
+57 clk 0 IT (57) 00000000800001f0 fff00e93 A svc_ns : li t4, 0xffffffffffffffff
+57 clk R t4 ffffffffffffffff
+58 clk 0 IT (58) 00000000800001f4 00700193 A svc_ns : li gp, 0x7
+58 clk R gp 7
+59 clk 0 IT (59) 00000000800001f8 35df1e63 A svc_ns : bne t5, t4, fail
+60 clk 0 IT (60) 00000000800001fc fff00093 A svc_ns : li ra, 0xffffffffffffffff
+60 clk R ra ffffffffffffffff
+61 clk 0 IT (61) 0000000080000200 0010df13 A svc_ns : srli t5, ra, 0x1
+61 clk R t5 7fffffffffffffff
+62 clk 0 IT (62) 0000000080000204 80000eb7fffe8e9300be9e937ffeee9300be9e937ffeee9300ae9e933ffeee93 A svc_ns : li t4, 0x7fffffffffffffff
+62 clk R t4 ffffffff80000000
+62 clk R t4 ffffffff7fffffff
+62 clk R t4 fffffbfffffff800
+62 clk R t4 fffffbffffffffff
+62 clk R t4 ffdffffffffff800
+62 clk R t4 ffdfffffffffffff
+62 clk R t4 7ffffffffffffc00
+62 clk R t4 7fffffffffffffff
+63 clk 0 IT (63) 0000000080000224 00800193 A svc_ns : li gp, 0x8
+63 clk R gp 8
+64 clk 0 IT (64) 0000000080000228 33df1663 A svc_ns : bne t5, t4, fail
+65 clk 0 IT (65) 000000008000022c fff00093 A svc_ns : li ra, 0xffffffffffffffff
+65 clk R ra ffffffffffffffff
+66 clk 0 IT (66) 0000000080000230 0070df13 A svc_ns : srli t5, ra, 0x7
+66 clk R t5 1ffffffffffffff
+67 clk 0 IT (67) 0000000080000234 02000eb7fffe8e9300be9e937ffeee9300be9e937ffeee9300ae9e933ffeee93 A svc_ns : li t4, 0x1ffffffffffffff
+67 clk R t4 2000000
+67 clk R t4 1ffffff
+67 clk R t4 ffffff800
+67 clk R t4 fffffffff
+67 clk R t4 7ffffffff800
+67 clk R t4 7fffffffffff
+67 clk R t4 1fffffffffffc00
+67 clk R t4 1ffffffffffffff
+68 clk 0 IT (68) 0000000080000254 00900193 A svc_ns : li gp, 0x9
+68 clk R gp 9
+69 clk 0 IT (69) 0000000080000258 2fdf1e63 A svc_ns : bne t5, t4, fail
+70 clk 0 IT (70) 000000008000025c fff00093 A svc_ns : li ra, 0xffffffffffffffff
+70 clk R ra ffffffffffffffff
+71 clk 0 IT (71) 0000000080000260 00e0df13 A svc_ns : srli t5, ra, 0xe
+71 clk R t5 3ffffffffffff
+72 clk 0 IT (72) 0000000080000264 00040eb7fffe8e9300be9e937ffeee9300be9e937ffeee9300ae9e933ffeee93 A svc_ns : li t4, 0x3ffffffffffff
+72 clk R t4 40000
+72 clk R t4 3ffff
+72 clk R t4 1ffff800
+72 clk R t4 1fffffff
+72 clk R t4 fffffff800
+72 clk R t4 ffffffffff
+72 clk R t4 3fffffffffc00
+72 clk R t4 3ffffffffffff
+73 clk 0 IT (73) 0000000080000284 00a00193 A svc_ns : li gp, 0xa
+73 clk R gp a
+74 clk 0 IT (74) 0000000080000288 2ddf1663 A svc_ns : bne t5, t4, fail
+75 clk 0 IT (75) 000000008000028c fff00093 A svc_ns : li ra, 0xffffffffffffffff
+75 clk R ra ffffffffffffffff
+76 clk 0 IT (76) 0000000080000290 01f0df13 A svc_ns : srli t5, ra, 0x1f
+76 clk R t5 1ffffffff
+77 clk 0 IT (77) 0000000080000294 00000eb7001e8e9300be9e937ffeee9300be9e937ffeee9300ae9e933ffeee93 A svc_ns : li t4, 0x1ffffffff
+77 clk R t4 0
+77 clk R t4 1
+77 clk R t4 800
+77 clk R t4 fff
+77 clk R t4 7ff800
+77 clk R t4 7fffff
+77 clk R t4 1fffffc00
+77 clk R t4 1ffffffff
+78 clk 0 IT (78) 00000000800002b4 00b00193 A svc_ns : li gp, 0xb
+78 clk R gp b
+79 clk 0 IT (79) 00000000800002b8 29df1e63 A svc_ns : bne t5, t4, fail
+80 clk 0 IT (80) 00000000800002bc 212120b712108093 A svc_ns : li ra, 0x21212121
+80 clk R ra 21212000
+80 clk R ra 21212121
+81 clk 0 IT (81) 00000000800002c4 0000df13 A svc_ns : srli t5, ra, 0x0
+81 clk R t5 21212121
+82 clk 0 IT (82) 00000000800002c8 21212eb7121e8e93 A svc_ns : li t4, 0x21212121
+82 clk R t4 21212000
+82 clk R t4 21212121
+83 clk 0 IT (83) 00000000800002d0 00c00193 A svc_ns : li gp, 0xc
+83 clk R gp c
+84 clk 0 IT (84) 00000000800002d4 29df1063 A svc_ns : bne t5, t4, fail
+85 clk 0 IT (85) 00000000800002d8 212120b712108093 A svc_ns : li ra, 0x21212121
+85 clk R ra 21212000
+85 clk R ra 21212121
+86 clk 0 IT (86) 00000000800002e0 0010df13 A svc_ns : srli t5, ra, 0x1
+86 clk R t5 10909090
+87 clk 0 IT (87) 00000000800002e4 10909eb7090e8e93 A svc_ns : li t4, 0x10909090
+87 clk R t4 10909000
+87 clk R t4 10909090
+88 clk 0 IT (88) 00000000800002ec 00d00193 A svc_ns : li gp, 0xd
+88 clk R gp d
+89 clk 0 IT (89) 00000000800002f0 27df1263 A svc_ns : bne t5, t4, fail
+90 clk 0 IT (90) 00000000800002f4 212120b712108093 A svc_ns : li ra, 0x21212121
+90 clk R ra 21212000
+90 clk R ra 21212121
+91 clk 0 IT (91) 00000000800002fc 0070df13 A svc_ns : srli t5, ra, 0x7
+91 clk R t5 424242
+92 clk 0 IT (92) 0000000080000300 00424eb7242e8e93 A svc_ns : li t4, 0x424242
+92 clk R t4 424000
+92 clk R t4 424242
+93 clk 0 IT (93) 0000000080000308 00e00193 A svc_ns : li gp, 0xe
+93 clk R gp e
+94 clk 0 IT (94) 000000008000030c 25df1463 A svc_ns : bne t5, t4, fail
+95 clk 0 IT (95) 0000000080000310 212120b712108093 A svc_ns : li ra, 0x21212121
+95 clk R ra 21212000
+95 clk R ra 21212121
+96 clk 0 IT (96) 0000000080000318 00e0df13 A svc_ns : srli t5, ra, 0xe
+96 clk R t5 8484
+97 clk 0 IT (97) 000000008000031c 00008eb7484e8e93 A svc_ns : li t4, 0x8484
+97 clk R t4 8000
+97 clk R t4 8484
+98 clk 0 IT (98) 0000000080000324 00f00193 A svc_ns : li gp, 0xf
+98 clk R gp f
+99 clk 0 IT (99) 0000000080000328 23df1663 A svc_ns : bne t5, t4, fail
+100 clk 0 IT (100) 000000008000032c 212120b712108093 A svc_ns : li ra, 0x21212121
+100 clk R ra 21212000
+100 clk R ra 21212121
+101 clk 0 IT (101) 0000000080000334 01f0df13 A svc_ns : srli t5, ra, 0x1f
+101 clk R t5 0
+102 clk 0 IT (102) 0000000080000338 00000e93 A svc_ns : li t4, 0x0
+102 clk R t4 0
+103 clk 0 IT (103) 000000008000033c 01000193 A svc_ns : li gp, 0x10
+103 clk R gp 10
+104 clk 0 IT (104) 0000000080000340 21df1a63 A svc_ns : bne t5, t4, fail
+105 clk 0 IT (105) 0000000080000344 000000b70000809300b090934000e09300b090930000e09300a090930000e093 A svc_ns : li ra, 0x80000000
+105 clk R ra 0
+105 clk R ra 0
+105 clk R ra 0
+105 clk R ra 400
+105 clk R ra 200000
+105 clk R ra 200000
+105 clk R ra 80000000
+105 clk R ra 80000000
+106 clk 0 IT (106) 0000000080000364 0070d093 A svc_ns : srli ra, ra, 0x7
+106 clk R ra 1000000
+107 clk 0 IT (107) 0000000080000368 01000eb7000e8e93 A svc_ns : li t4, 0x1000000
+107 clk R t4 1000000
+107 clk R t4 1000000
+108 clk 0 IT (108) 0000000080000370 01100193 A svc_ns : li gp, 0x11
+108 clk R gp 11
+109 clk 0 IT (109) 0000000080000374 1fd09063 A svc_ns : bne ra, t4, fail
+110 clk 0 IT (110) 0000000080000378 00000213 A svc_ns : li tp, 0x0
+110 clk R tp 0
+111 clk 0 IT (111) 000000008000037c 000000b70000809300b090934000e09300b090930000e09300a090930000e093 A svc_ns : li ra, 0x80000000
+111 clk R ra 0
+111 clk R ra 0
+111 clk R ra 0
+111 clk R ra 400
+111 clk R ra 200000
+111 clk R ra 200000
+111 clk R ra 80000000
+111 clk R ra 80000000
+112 clk 0 IT (112) 000000008000039c 0070df13 A svc_ns : srli t5, ra, 0x7
+112 clk R t5 1000000
+113 clk 0 IT (113) 00000000800003a0 000f0313 A svc_ns : addi t1, t5, 0
+113 clk R t1 1000000
+114 clk 0 IT (114) 00000000800003a4 00120213 A svc_ns : addi tp, tp, 1
+114 clk R tp 1
+115 clk 0 IT (115) 00000000800003a8 00200293 A svc_ns : li t0, 0x2
+115 clk R t0 2
+116 clk 0 IT (116) 00000000800003ac fc5218e3 A svc_ns : bne tp, t0, 1b
+117 clk 0 IT (117) 000000008000037c 000000b70000809300b090934000e09300b090930000e09300a090930000e093 A svc_ns : li ra, 0x80000000
+117 clk R ra 0
+117 clk R ra 0
+117 clk R ra 0
+117 clk R ra 400
+117 clk R ra 200000
+117 clk R ra 200000
+117 clk R ra 80000000
+117 clk R ra 80000000
+118 clk 0 IT (118) 000000008000039c 0070df13 A svc_ns : srli t5, ra, 0x7
+118 clk R t5 1000000
+119 clk 0 IT (119) 00000000800003a0 000f0313 A svc_ns : addi t1, t5, 0
+119 clk R t1 1000000
+120 clk 0 IT (120) 00000000800003a4 00120213 A svc_ns : addi tp, tp, 1
+120 clk R tp 2
+121 clk 0 IT (121) 00000000800003a8 00200293 A svc_ns : li t0, 0x2
+121 clk R t0 2
+122 clk 0 IT (122) 00000000800003ac fc5218e3 A svc_ns : bne tp, t0, 1b
+123 clk 0 IT (123) 00000000800003b0 01000eb7000e8e93 A svc_ns : li t4, 0x1000000
+123 clk R t4 1000000
+123 clk R t4 1000000
+124 clk 0 IT (124) 00000000800003b8 01200193 A svc_ns : li gp, 0x12
+124 clk R gp 12
+125 clk 0 IT (125) 00000000800003bc 19d31c63 A svc_ns : bne t1, t4, fail
+126 clk 0 IT (126) 00000000800003c0 00000213 A svc_ns : li tp, 0x0
+126 clk R tp 0
+127 clk 0 IT (127) 00000000800003c4 000000b70000809300b090934000e09300b090930000e09300a090930000e093 A svc_ns : li ra, 0x80000000
+127 clk R ra 0
+127 clk R ra 0
+127 clk R ra 0
+127 clk R ra 400
+127 clk R ra 200000
+127 clk R ra 200000
+127 clk R ra 80000000
+127 clk R ra 80000000
+128 clk 0 IT (128) 00000000800003e4 00e0df13 A svc_ns : srli t5, ra, 0xe
+128 clk R t5 20000
+129 clk 0 IT (129) 00000000800003e8 00000013 A svc_ns : nop
+130 clk 0 IT (130) 00000000800003ec 000f0313 A svc_ns : addi t1, t5, 0
+130 clk R t1 20000
+131 clk 0 IT (131) 00000000800003f0 00120213 A svc_ns : addi tp, tp, 1
+131 clk R tp 1
+132 clk 0 IT (132) 00000000800003f4 00200293 A svc_ns : li t0, 0x2
+132 clk R t0 2
+133 clk 0 IT (133) 00000000800003f8 fc5216e3 A svc_ns : bne tp, t0, 1b
+134 clk 0 IT (134) 00000000800003c4 000000b70000809300b090934000e09300b090930000e09300a090930000e093 A svc_ns : li ra, 0x80000000
+134 clk R ra 0
+134 clk R ra 0
+134 clk R ra 0
+134 clk R ra 400
+134 clk R ra 200000
+134 clk R ra 200000
+134 clk R ra 80000000
+134 clk R ra 80000000
+135 clk 0 IT (135) 00000000800003e4 00e0df13 A svc_ns : srli t5, ra, 0xe
+135 clk R t5 20000
+136 clk 0 IT (136) 00000000800003e8 00000013 A svc_ns : nop
+137 clk 0 IT (137) 00000000800003ec 000f0313 A svc_ns : addi t1, t5, 0
+137 clk R t1 20000
+138 clk 0 IT (138) 00000000800003f0 00120213 A svc_ns : addi tp, tp, 1
+138 clk R tp 2
+139 clk 0 IT (139) 00000000800003f4 00200293 A svc_ns : li t0, 0x2
+139 clk R t0 2
+140 clk 0 IT (140) 00000000800003f8 fc5216e3 A svc_ns : bne tp, t0, 1b
+141 clk 0 IT (141) 00000000800003fc 00020eb7000e8e93 A svc_ns : li t4, 0x20000
+141 clk R t4 20000
+141 clk R t4 20000
+142 clk 0 IT (142) 0000000080000404 01300193 A svc_ns : li gp, 0x13
+142 clk R gp 13
+143 clk 0 IT (143) 0000000080000408 15d31663 A svc_ns : bne t1, t4, fail
+144 clk 0 IT (144) 000000008000040c 00000213 A svc_ns : li tp, 0x0
+144 clk R tp 0
+145 clk 0 IT (145) 0000000080000410 000000b70000809300b090934000e09300b090930000e09300a090930010e093 A svc_ns : li ra, 0x80000001
+145 clk R ra 0
+145 clk R ra 0
+145 clk R ra 0
+145 clk R ra 400
+145 clk R ra 200000
+145 clk R ra 200000
+145 clk R ra 80000000
+145 clk R ra 80000001
+146 clk 0 IT (146) 0000000080000430 01f0df13 A svc_ns : srli t5, ra, 0x1f
+146 clk R t5 1
+147 clk 0 IT (147) 0000000080000434 00000013 A svc_ns : nop
+148 clk 0 IT (148) 0000000080000438 00000013 A svc_ns : nop
+149 clk 0 IT (149) 000000008000043c 000f0313 A svc_ns : addi t1, t5, 0
+149 clk R t1 1
+150 clk 0 IT (150) 0000000080000440 00120213 A svc_ns : addi tp, tp, 1
+150 clk R tp 1
+151 clk 0 IT (151) 0000000080000444 00200293 A svc_ns : li t0, 0x2
+151 clk R t0 2
+152 clk 0 IT (152) 0000000080000448 fc5214e3 A svc_ns : bne tp, t0, 1b
+153 clk 0 IT (153) 0000000080000410 000000b70000809300b090934000e09300b090930000e09300a090930010e093 A svc_ns : li ra, 0x80000001
+153 clk R ra 0
+153 clk R ra 0
+153 clk R ra 0
+153 clk R ra 400
+153 clk R ra 200000
+153 clk R ra 200000
+153 clk R ra 80000000
+153 clk R ra 80000001
+154 clk 0 IT (154) 0000000080000430 01f0df13 A svc_ns : srli t5, ra, 0x1f
+154 clk R t5 1
+155 clk 0 IT (155) 0000000080000434 00000013 A svc_ns : nop
+156 clk 0 IT (156) 0000000080000438 00000013 A svc_ns : nop
+157 clk 0 IT (157) 000000008000043c 000f0313 A svc_ns : addi t1, t5, 0
+157 clk R t1 1
+158 clk 0 IT (158) 0000000080000440 00120213 A svc_ns : addi tp, tp, 1
+158 clk R tp 2
+159 clk 0 IT (159) 0000000080000444 00200293 A svc_ns : li t0, 0x2
+159 clk R t0 2
+160 clk 0 IT (160) 0000000080000448 fc5214e3 A svc_ns : bne tp, t0, 1b
+161 clk 0 IT (161) 000000008000044c 00100e93 A svc_ns : li t4, 0x1
+161 clk R t4 1
+162 clk 0 IT (162) 0000000080000450 01400193 A svc_ns : li gp, 0x14
+162 clk R gp 14
+163 clk 0 IT (163) 0000000080000454 11d31063 A svc_ns : bne t1, t4, fail
+164 clk 0 IT (164) 0000000080000458 00000213 A svc_ns : li tp, 0x0
+164 clk R tp 0
+165 clk 0 IT (165) 000000008000045c 000000b70000809300b090934000e09300b090930000e09300a090930000e093 A svc_ns : li ra, 0x80000000
+165 clk R ra 0
+165 clk R ra 0
+165 clk R ra 0
+165 clk R ra 400
+165 clk R ra 200000
+165 clk R ra 200000
+165 clk R ra 80000000
+165 clk R ra 80000000
+166 clk 0 IT (166) 000000008000047c 0070df13 A svc_ns : srli t5, ra, 0x7
+166 clk R t5 1000000
+167 clk 0 IT (167) 0000000080000480 00120213 A svc_ns : addi tp, tp, 1
+167 clk R tp 1
+168 clk 0 IT (168) 0000000080000484 00200293 A svc_ns : li t0, 0x2
+168 clk R t0 2
+169 clk 0 IT (169) 0000000080000488 fc521ae3 A svc_ns : bne tp, t0, 1b
+170 clk 0 IT (170) 000000008000045c 000000b70000809300b090934000e09300b090930000e09300a090930000e093 A svc_ns : li ra, 0x80000000
+170 clk R ra 0
+170 clk R ra 0
+170 clk R ra 0
+170 clk R ra 400
+170 clk R ra 200000
+170 clk R ra 200000
+170 clk R ra 80000000
+170 clk R ra 80000000
+171 clk 0 IT (171) 000000008000047c 0070df13 A svc_ns : srli t5, ra, 0x7
+171 clk R t5 1000000
+172 clk 0 IT (172) 0000000080000480 00120213 A svc_ns : addi tp, tp, 1
+172 clk R tp 2
+173 clk 0 IT (173) 0000000080000484 00200293 A svc_ns : li t0, 0x2
+173 clk R t0 2
+174 clk 0 IT (174) 0000000080000488 fc521ae3 A svc_ns : bne tp, t0, 1b
+175 clk 0 IT (175) 000000008000048c 01000eb7000e8e93 A svc_ns : li t4, 0x1000000
+175 clk R t4 1000000
+175 clk R t4 1000000
+176 clk 0 IT (176) 0000000080000494 01500193 A svc_ns : li gp, 0x15
+176 clk R gp 15
+177 clk 0 IT (177) 0000000080000498 0bdf1e63 A svc_ns : bne t5, t4, fail
+178 clk 0 IT (178) 000000008000049c 00000213 A svc_ns : li tp, 0x0
+178 clk R tp 0
+179 clk 0 IT (179) 00000000800004a0 000000b70000809300b090934000e09300b090930000e09300a090930000e093 A svc_ns : li ra, 0x80000000
+179 clk R ra 0
+179 clk R ra 0
+179 clk R ra 0
+179 clk R ra 400
+179 clk R ra 200000
+179 clk R ra 200000
+179 clk R ra 80000000
+179 clk R ra 80000000
+180 clk 0 IT (180) 00000000800004c0 00000013 A svc_ns : nop
+181 clk 0 IT (181) 00000000800004c4 00e0df13 A svc_ns : srli t5, ra, 0xe
+181 clk R t5 20000
+182 clk 0 IT (182) 00000000800004c8 00120213 A svc_ns : addi tp, tp, 1
+182 clk R tp 1
+183 clk 0 IT (183) 00000000800004cc 00200293 A svc_ns : li t0, 0x2
+183 clk R t0 2
+184 clk 0 IT (184) 00000000800004d0 fc5218e3 A svc_ns : bne tp, t0, 1b
+185 clk 0 IT (185) 00000000800004a0 000000b70000809300b090934000e09300b090930000e09300a090930000e093 A svc_ns : li ra, 0x80000000
+185 clk R ra 0
+185 clk R ra 0
+185 clk R ra 0
+185 clk R ra 400
+185 clk R ra 200000
+185 clk R ra 200000
+185 clk R ra 80000000
+185 clk R ra 80000000
+186 clk 0 IT (186) 00000000800004c0 00000013 A svc_ns : nop
+187 clk 0 IT (187) 00000000800004c4 00e0df13 A svc_ns : srli t5, ra, 0xe
+187 clk R t5 20000
+188 clk 0 IT (188) 00000000800004c8 00120213 A svc_ns : addi tp, tp, 1
+188 clk R tp 2
+189 clk 0 IT (189) 00000000800004cc 00200293 A svc_ns : li t0, 0x2
+189 clk R t0 2
+190 clk 0 IT (190) 00000000800004d0 fc5218e3 A svc_ns : bne tp, t0, 1b
+191 clk 0 IT (191) 00000000800004d4 00020eb7000e8e93 A svc_ns : li t4, 0x20000
+191 clk R t4 20000
+191 clk R t4 20000
+192 clk 0 IT (192) 00000000800004dc 01600193 A svc_ns : li gp, 0x16
+192 clk R gp 16
+193 clk 0 IT (193) 00000000800004e0 07df1a63 A svc_ns : bne t5, t4, fail
+194 clk 0 IT (194) 00000000800004e4 00000213 A svc_ns : li tp, 0x0
+194 clk R tp 0
+195 clk 0 IT (195) 00000000800004e8 000000b70000809300b090934000e09300b090930000e09300a090930010e093 A svc_ns : li ra, 0x80000001
+195 clk R ra 0
+195 clk R ra 0
+195 clk R ra 0
+195 clk R ra 400
+195 clk R ra 200000
+195 clk R ra 200000
+195 clk R ra 80000000
+195 clk R ra 80000001
+196 clk 0 IT (196) 0000000080000508 00000013 A svc_ns : nop
+197 clk 0 IT (197) 000000008000050c 00000013 A svc_ns : nop
+198 clk 0 IT (198) 0000000080000510 01f0df13 A svc_ns : srli t5, ra, 0x1f
+198 clk R t5 1
+199 clk 0 IT (199) 0000000080000514 00120213 A svc_ns : addi tp, tp, 1
+199 clk R tp 1
+200 clk 0 IT (200) 0000000080000518 00200293 A svc_ns : li t0, 0x2
+200 clk R t0 2
+201 clk 0 IT (201) 000000008000051c fc5216e3 A svc_ns : bne tp, t0, 1b
+202 clk 0 IT (202) 00000000800004e8 000000b70000809300b090934000e09300b090930000e09300a090930010e093 A svc_ns : li ra, 0x80000001
+202 clk R ra 0
+202 clk R ra 0
+202 clk R ra 0
+202 clk R ra 400
+202 clk R ra 200000
+202 clk R ra 200000
+202 clk R ra 80000000
+202 clk R ra 80000001
+203 clk 0 IT (203) 0000000080000508 00000013 A svc_ns : nop
+204 clk 0 IT (204) 000000008000050c 00000013 A svc_ns : nop
+205 clk 0 IT (205) 0000000080000510 01f0df13 A svc_ns : srli t5, ra, 0x1f
+205 clk R t5 1
+206 clk 0 IT (206) 0000000080000514 00120213 A svc_ns : addi tp, tp, 1
+206 clk R tp 2
+207 clk 0 IT (207) 0000000080000518 00200293 A svc_ns : li t0, 0x2
+207 clk R t0 2
+208 clk 0 IT (208) 000000008000051c fc5216e3 A svc_ns : bne tp, t0, 1b
+209 clk 0 IT (209) 0000000080000520 00100e93 A svc_ns : li t4, 0x1
+209 clk R t4 1
+210 clk 0 IT (210) 0000000080000524 01700193 A svc_ns : li gp, 0x17
+210 clk R gp 17
+211 clk 0 IT (211) 0000000080000528 03df1663 A svc_ns : bne t5, t4, fail
+212 clk 0 IT (212) 000000008000052c 00405093 A svc_ns : srli ra, zero, 0x4
+212 clk R ra 0
+213 clk 0 IT (213) 0000000080000530 00000e93 A svc_ns : li t4, 0x0
+213 clk R t4 0
+214 clk 0 IT (214) 0000000080000534 01800193 A svc_ns : li gp, 0x18
+214 clk R gp 18
+215 clk 0 IT (215) 0000000080000538 01d09e63 A svc_ns : bne ra, t4, fail
+216 clk 0 IT (216) 000000008000053c 02100093 A svc_ns : li ra, 0x21
+216 clk R ra 21
+217 clk 0 IT (217) 0000000080000540 00a0d013 A svc_ns : srli zero, ra, 0xa
+217 clk R zero 0
+218 clk 0 IT (218) 0000000080000544 00000e93 A svc_ns : li t4, 0x0
+218 clk R t4 0
+219 clk 0 IT (219) 0000000080000548 01900193 A svc_ns : li gp, 0x19
+219 clk R gp 19
+220 clk 0 IT (220) 000000008000054c 01d01463 A svc_ns : bne zero, t4, fail
+221 clk 0 IT (221) 0000000080000550 00301c63 A svc_ns : bne zero, gp, pass
+222 clk 0 IT (222) 0000000080000568 0000000f A svc_ns : fence
+223 clk 0 IT (223) 000000008000056c 00100193 A svc_ns : li gp, 0x1
+223 clk R gp 1
+224 clk 0 IT (224) 0000000080000570 00000073 A svc_ns : ecall
