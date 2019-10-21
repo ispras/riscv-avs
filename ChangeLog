@@ -1,3 +1,9 @@
+2019-10-21 Alexander Kamkin <kamkin@ispras.ru>
+
+	Fixed rv32v test program.
+
+	* testsuite/synthetics/rv32v: Fixed.
+
 2019-10-18 Alexander Kamkin <kamkin@ispras.ru>
 
 	Added compliance tests ported from https://github.com/riscv/riscv-tests.
