@@ -27,7 +27,3 @@ $ riscv64-unknown-elf-gcc -march=rv64gcv -nostdlib -nostartfiles -Trv32v_simple_
 ```console
 $ spike --isa=RV64IMAFDCV -l -p1 rv32v_simple_selfcheck_0000.o
 ```
-
-## Contacts
-
-For more information, contact microtesk-support@ispras.ru.
